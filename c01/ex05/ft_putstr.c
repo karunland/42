@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkorkmaz <hkorkmaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 09:42:34 by hkorkmaz          #+#    #+#             */
-/*   Updated: 2022/09/01 17:02:37 by hkorkmaz         ###   ########.fr       */
+/*   Created: 2022/09/01 09:46:21 by hkorkmaz          #+#    #+#             */
+/*   Updated: 2022/09/01 18:05:24 by hkorkmaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	*nbr = 42;
+	write(1, &c, 1);
 }
+
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+		ft_putchar(*(str++));
+}
+// #include <stdio.h>
+// int main()
+// {
+// 	ft_putstr("harun korkmaz\n");
+// }
