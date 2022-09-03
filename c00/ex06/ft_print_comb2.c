@@ -1,41 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkorkmaz <hkorkmaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 20:28:08 by hkorkmaz          #+#    #+#             */
+/*   Updated: 2022/08/26 13:10:10 by hkorkmaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void ft_print_comb2(void)
+void	ft_write_comb(int a, int b)
 {
-    int i, j;
-    for (i = 0; i <= 9; i++)
-    {
-        for (j = 0; j <= 9; j++)
-        {
-
-            for (int m = i; m <= 9; i++)
-            {
-                for (int n = j + 1; n <= 9; j++)
-                {
-                    
-                    ft_putchar(i + '0');
-                    ft_putchar(j + '0');
-                    ft_putchar(' ');
-
-                    ft_putchar(i + '0');
-                    ft_putchar(j + '0');
-                    if (i != 9 && j != 8)
-                    {
-                        ft_putchar(',');
-                        ft_putchar(' ');
-                    }
-                }
-            }
-        }
-    }
+	ft_putchar(48 + a / 10);
+	ft_putchar(48 + a % 10);
+	ft_putchar(' ');
+	ft_putchar(48 + b / 10);
+	ft_putchar(48 + b % 10);
+	if (!(a == 98 && b == 99))
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
 }
 
-int main()
+void	ft_print_comb2(void)
 {
-    ft_print_comb2();
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a <= 98)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			ft_write_comb(a, b);
+			b++;
+		}
+		a++;
+	}
 }

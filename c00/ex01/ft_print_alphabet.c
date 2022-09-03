@@ -1,22 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkorkmaz <hkorkmaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 16:18:36 by hkorkmaz          #+#    #+#             */
+/*   Updated: 2022/08/26 13:09:33 by hkorkmaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
+	return ;
 }
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-    int i = 0;
-    while (i <= ('z' - 'a'))
-    {
-        ft_putchar(i + 'a');
-        i++;
-    }
-    ft_putchar('\n');
-}
+	int	i;
 
-int main ()
-{
-    ft_print_alphabet();
+	i = 0;
+	while (i <= ('z' - 'a'))
+	{
+		ft_putchar(i++ + 'a');
+	}
+	return ;
 }
