@@ -1,0 +1,12 @@
+*
+!*.*
+!*/
+*.swp
+main.c
+main
+.DS_Store
+*.pdf
+*.dSYM
+.vscode
+*.out
+ex11
